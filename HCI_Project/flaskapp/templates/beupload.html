@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted"> Upload a File</h3>
+      </div>
+      <hr/>
+      <div>
+
+       <form action="upload" method="post" enctype="multipart/form-data">
+           <input type="text" name="firstname" />
+            <input type="text" name="lastname" />
+            <input type="text" name="emailaddress" />
+        <input type="file" multiple="" name="file[]" class="span3" /><br />
+
+        <input type="submit" value="Upload"  class="span2">
+      </form>
+
+
+      </div>
+        <div>
+
+             <form action="display" method="post" enctype="multipart/form-data">
+
+
+        <input type="submit" value="Display"  class="span2">
+      </form>
+        </div>
+
+
+
+
+
+      {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+
+
+      </div>
+
+  </body>
+</html>

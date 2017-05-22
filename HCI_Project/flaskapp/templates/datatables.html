@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" media="all" type="text/css"/>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script> -->
+    <!-- <script src="https://cdn.datatables.net/fixedheader/3.1.2/js/dataTables.fixedHeader.min.js"></script> -->
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<body>
+	
+	<table id="example" class="display compact" cellspacing="0" width="100%">
+		<thead>
+			<tr style="font-size:15px;color:#107896;font-weight: bold;">
+				<th>Metric</th><th>Value</th><th>Value1</th><th>Value2</th>
+			</tr>
+		</thead>
+	</table>
+	
+</body>
+<script>
+
+json=[
+            {name: 'P1', price: 250, positive: 7, negative: 13},
+            {name: 'P2', price: 650, positive: 11, negative: 3},
+            {name: 'P3', price: 1000, positive: 2, negative: 4},
+            {name: 'P4', price: 200, positive: 7, negative: 1},
+			{name: 'P5', price: 150, positive: 8, negative: 02},
+            {name: 'P6', price: 400, positive: 11, negative: 15},
+            {name: 'P7', price: 750, positive: 6, negative: 2},
+            {name: 'P8', price: 786, positive: 13, negative: 08},
+			{name: 'P9', price: 110, positive: 11, negative: 13},
+        ];
+
+var table = $('#example').DataTable({
+                    "sDom": 'Bltipr',
+                    fixedHeader: true,
+                    "aaData": json,
+                    buttons: [
+                        'csv'
+                    ],
+                    "aoColumns": [{
+                        "mDataProp": "name"
+                    }, {
+                        "mDataProp": "price"
+                    }, {
+                        "mDataProp": "positive"
+                    }, {
+                        "mDataProp": "negative"						
+                    }]
+                });
+
+</script>
+</html>
